@@ -24,7 +24,7 @@ body {
   width: 100%;
   min-height: 100vh;
 
-  background-image: url("/img/full.jpg");
+  background-image: url("./img/full.jpg");
   background-size: cover;
   background-position: center;
 }
