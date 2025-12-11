@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi" style="scroll-behavior: smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ốc Nhà Quê</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/img/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Ốc Nhà Quê" />
+    <link rel="manifest" href="/img/site.webmanifest" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="adapt.css" />
+    <link rel="stylesheet" href="main2.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="overlay"></div>
+      <div class="deco-bar-left"></div>
+      <div class="deco-bar-right"></div>
+      <div class="content-container">
+        <header>
+          <div class="brand">
+            <h2>Ốc Nhà Quê</h2>
+            <span>Restaurant</span>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="/about/about.html">About</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="/contact/contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+        <div class="main-body">
+          <h1 class="title-script">Ốc Nhà Quê</h1>
+          <div class="orange-strip"></div>
+          <div class="food-gallery">
+            <div class="food-card">
+              <img src="/img/full4.jpg" alt="Food Left" />
+            </div>
+            <div class="food-card center-card">
+              <img src="/img/full.jpg" alt="Food Center" />
+            </div>
+            <div class="food-card">
+              <img src="/img/full3.jpg" alt="Food Right" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="menu-section" id="menu">
+      <div class="menu-header">
+        <h2 style="padding-top: 65px">Most Popular Menus</h2>
+
+        <div class="category-select-wrapper">
+          <select
+            class="category-select"
+            id="menu-filter"
+            onchange="filterMenu()"
+          >
+            <option value="all" >All</option>
+            <option value="hau">Hàu</option>
+            <option value="oc_dong">Ốc Đồng</option>
+            <option value="hai_san">Hải sản</option>
+            <option value="dessert">Đồ ăn vặt</option>
+            <option value="drinks">Đồ Uống</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="menu-grid">
+        <div class="menu-item show" data-category="oc_dong">
+          <img src="/img/menu_img/TA1.jpg" alt="Ice Cream" />
+          <div class="item-title">ốc vặn</div>
+          <div class="item-desc">
+            được cái nhỏ nhưng ăn cũng hơi mất thời gian
+          </div>
+          <div class="item-price">loanh quanh 5 chục</div>
+        </div>
+         <div class="menu-item show" data-category="hai_san">
+          <a href="https://www.facebook.com/troc.enti?locale=vi_VN" target="_blank"><img src="/img/menu_img/TA1.jpg" alt="Ice Cream" /></a>
+          <div class="item-title">Con ghệ 50kg</div>
+          <div class="item-desc">
+           ngon từ thịt ngọt từ xương 
+
+          </div>
+          <div class="item-price">10 tỷ</div>
+        </div>
+
+        <div class="menu-item show" data-category="oc_dong">
+          <img src="/img/menu_img/oc_mit.jpg" alt="Noodles" />
+          <div class="item-title">ốc mít</div>
+          <div class="item-desc">to hơn ốc vặn nhưng đắt hơn nhiều</div>
+          <div class="item-price">90k</div>
+        </div>
+
+        <div class="menu-item show" data-category="hau">
+          <img src="/img/menu_img/hau_mo_hanh.jpg" alt="Burger" />
+          <div class="item-title">Hàu nướng mỡ hành</div>
+          <div class="item-desc">
+            Hàu nướng mỡ hành béo ngậy kèm theo lạc, hành khô
+          </div>
+          <div class="item-price">9k/1 con</div>
+        </div>
+        <div class="menu-item show" data-category="hau">
+          <img src="/img/menu_img/hau_mo_hanh.jpg" alt="Hàu" />
+          <div class="item-title">Hàu tóp mỡ</div>
+          <div class="item-desc">Chắc là hàu mỡ hành rồi thêm tóp mỡ</div>
+          <div class="item-price">đắt hơn hàu kia 1k</div>
+        </div>
+        
+        <div class="menu-item show" data-category="drinks">
+          <img
+            src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600&auto=format&fit=crop"
+            alt="Drink"
+          />
+          <div class="item-title">Trà quất</div>
+          <div class="item-desc">
+            Thức uống mát lạnh từ quất tươi, tý đá và trà nhài nói chung là
+            không ngon.
+          </div>
+          <div class="item-price">10k nhó</div>
+        </div>
+        <div class="menu-item show" data-category="drinks">
+          <img
+            src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600&auto=format&fit=crop"
+            alt="Drink"
+          />
+          <div class="item-title">Trà quất</div>
+          <div class="item-desc">
+            Thức uống mát lạnh từ quất tươi, tý đá và trà nhài nói chung là
+            không ngon.
+          </div>
+          <div class="item-price">10k nhó</div>
+        </div>
+      </div>
+      <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="contact"> contact</h3>
+        
+    </pre>
+    </section>
+  </body>
+</html>

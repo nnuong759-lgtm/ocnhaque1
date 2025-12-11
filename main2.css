@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px 25px 50px; /* Tăng padding dưới một chút */
+
+  /* Đổ bóng mềm mại */
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.menu-section {
+  background-color: #111;
+  background: linear-gradient(
+    to bottom,
+    #1a1a1a,
+    #050505
+  ); /* Gradient mềm mại hơn thay vì đen tuyền */
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.menu-header {
+  margin-bottom: 40px;
+}
+
+.menu-header h2 {
+  font-family: "Montserrat", sans-serif; /* Font in nghiêng giống mẫu */
+  font-style: italic;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Phong cách cho Dropdown chọn danh mục */
+.category-select-wrapper {
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.category-select {
+  padding: 12px 20px;
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  background-color: #1f1f1f;
+  border: 2.9px solid #e89f38;
+  border-radius: 28px; /* Bo tròn mềm mại (pill shape) */
+  cursor: pointer;
+  outline: none;
+  min-width: 355px;
+  box-shadow: 0 4px 15px rgba(232, 159, 56, 0.15); /* Hiệu ứng phát sáng nhẹ màu vàng */
+  transition: all 0.3s ease;
+}
+
+.category-select option {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 10px;
+}
+
+/* Lưới hiển thị món ăn */
+.menu-grid {
+  display: grid;
+  /* Chia cột: Desktop 4 cột, Tablet 2 cột, Mobile 1 cột */
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Thẻ món ăn */
+.menu-item {
+  background-color: #1a1a1a; /* Thêm nền xám tối cho thẻ (Card style) */
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  /* Mặc định hiện tất cả */
+  display: block;
+  border: none;
+}
+
+/* Hiệu ứng ẩn hiện */
+.menu-item.hidden {
+  display: none;
+}
+
+/* Hiệu ứng fade in khi hiện món */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-item.show {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.item-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.item-desc {
+  font-size: 0.9rem;
+  color: #a0a0a0; /* Màu xám nhạt cho mô tả */
+  margin-bottom: 10px;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+.item-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color, #e89f38); /* Đổi màu giá sang vàng để đồng bộ */
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-grid {
+    grid-template-columns: 2fr;
+  }
+}

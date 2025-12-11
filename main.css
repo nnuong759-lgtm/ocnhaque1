@@ -1,0 +1,181 @@
+/* --- CÀI ĐẶT CHUNG --- */
+:root {
+  --primary-color: #e89f38; /* Màu cam vàng chủ đạo */
+  --text-color: #ffffff;
+  --bg-overlay: rgba(13, 17, 23, 0.85); /* Màu nền tối che phủ ảnh background */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
+  background-color: #0d1117;
+  overflow-x: hidden; 
+}
+
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url("/img/full.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-overlay);
+  z-index: 1;
+}
+
+
+.content-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.brand {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 15px;
+}
+
+.brand h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  line-height: 1.;
+}
+
+.brand span {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--primary-color);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: rgb(255, 255, 255);
+}
+
+/* --- PHẦN GIỮA (TITLE & MENU) --- */
+.main-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Tiêu đề "Food Menu" dạng chữ ký */
+.title-script {
+  font-family: "Mr Dafoe", Calibri; /* Font chữ viết tay */
+  font-size: 9.9rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 90px;
+  text-shadow: 12px 12px 14px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px) rotate(-3deg); /* Đẩy lên cao 1 chút và giữ độ nghiêng */
+}
+
+/* Dải màu cam chạy ngang */
+.orange-strip {
+  position: absolute;
+  width: 100vw;
+  height: 140px;
+  background-color: var(--primary-color);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 55%; /* Căn chỉnh vị trí dải màu */
+  z-index: -1; /* Nằm dưới ảnh món ăn */
+}
+
+.food-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+ margin-top: 0px;
+}
+
+.food-card {
+  background: white;
+  padding: 5px; /* Tạo viền trắng */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.food-card img {
+  display: block;
+  width: 220px;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Ảnh giữa to hơn */
+.food-card.center-card {
+  transform: scale(1.2); /* Phóng to ảnh giữa */
+  z-index: 10;
+}
+
+.food-card.center-card img {
+  height: 300px; /* Ảnh giữa cao hơn chút */
+}
+
+/* --- CÁC HÌNH TRANG TRÍ 2 BÊN --- */
+.deco-bar-left,
+.deco-bar-right {
+  position: absolute;
+  top: 25%;
+  width: 30px;
+  height: 150px;
+  background-color: var(--primary-color);
+}
+
+.deco-bar-left {
+  left: 0;
+}
+
+.deco-bar-right {
+  right: 0;
+}
